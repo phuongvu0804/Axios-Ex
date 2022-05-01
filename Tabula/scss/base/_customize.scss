@@ -1,0 +1,47 @@
+//functional class
+.display-appear {
+    display: block !important;
+}
+
+.display-none {
+    display: none !important;
+}
+
+//Animation
+@keyframes appearFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+
+//Responsive
+//For PC
+.container {
+    @media screen and (min-width: 1200px) {
+        max-width: 1200px;
+        padding: 0;
+    }
+}
+
+//For tablet
+.container {
+    @media screen and (min-width: 740px) and (max-width: 1023px) {
+        max-width: 708px;
+        padding: 0;
+    }
+}
+
+
+//For mobile
+.container {
+    @media screen and (max-width: 739px) {
+        max-width: 315px;
+        padding: 0;
+    }
+}

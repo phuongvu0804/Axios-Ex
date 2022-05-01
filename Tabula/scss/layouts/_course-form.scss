@@ -1,0 +1,231 @@
+#course {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 130px auto 0;
+
+
+    .row {
+        .col {
+            @for $counter from 1 through 2 {
+                &:nth-child(#{$counter}) {
+                    animation: appearFromLeft 0.5s 0.2s * $counter ease;
+    
+                }
+            }
+            
+        }
+    }
+
+    .course__img {
+        text-align: center;
+        img {
+            width: 526px;
+            padding: 0 20px;
+        }
+    }
+
+    .course__form {
+        padding: 0 20px;
+
+        form {
+            padding: 35px 20px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            background-color: $white-color;
+
+        }
+        .course-form__title {
+            @include text-style (38px, $fw-3, $text-color);
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .course-form__body {
+            .course-form__user-info {
+                display: flex;
+
+            }
+
+            .course-form__user-info {
+                .form-group {
+                    margin-right: 10px;
+                }
+            }
+
+            .form-group {
+                position: relative;
+                flex: 1;
+
+                .input-wrapper {
+                    display: flex;
+                    align-items: center;                    
+
+                }
+
+
+                select {
+                    display: flex;
+                    padding: 10px 14px 10px 40px;
+                    opacity: 0.6;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    cursor: pointer;
+                }
+
+                select option {
+                    background-color: red;
+                }
+
+                textarea.form-group__input{
+                    border-radius: 22px;
+                    height: 90px;
+
+                }
+
+                .form-group__icon {
+                    position: absolute;
+                    left: 14px;
+                    top: 16px;
+                    z-index: 1;
+                    color: $main-color;
+                }
+
+                .form-group__select-icon {
+                    display: none;
+                    position: absolute;
+                    right: 0;
+                    padding-right: 20px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    color: $main-color;
+                    font-size: 12px;
+                }
+
+                .form-group__select-icon.active {
+                    display: block;
+                }
+
+                .form-group__input {
+                    padding: 14px 14px 14px $pd-4;
+                    border-radius: 44px;
+                    border: 1px solid rgba(0,0,0,.1);
+                    font-size: 12px;
+                    outline: none;
+                    width: 100%;
+
+                }
+
+                .form-group__input.active {
+                    border-color: rgba(0, 0, 0, 0.3);
+                    box-shadow: 0 0 8px rgba(0, 0, 0, 0.06);
+                }
+
+                .course-form__error-msg {
+                    @include text-style (15px, 500, $main-color);
+                    margin: 0 0 0 6px;
+                }
+            }
+
+
+        }
+
+        .course-form__btn {
+            margin-top: 30px;
+            height: 48px;
+            width: 150px;
+            padding: 0;
+
+            a {
+                @include text-style ($fs-1, $fw-2, $white-color);
+                line-height: 48px;
+                text-transform: uppercase;
+
+            }
+        }
+
+        .course-form__msg {
+            @include text-style (15px, $fw-1, $text-color);
+            border: 2px solid #ffb900;
+            padding: 8px 18px;
+            margin-top: 65px;
+
+        }
+
+
+    }
+
+}
+
+//Responsive 
+
+//For tablet & mobile
+
+@include responsive ("extra-large-down") {
+    #course {
+
+        .row {
+            flex-direction: column;
+        }
+
+        .course__form {
+            padding: 0;
+            width: 100%;
+        }
+
+        #course-form {
+            margin-top: 50px;
+
+            .course-form__title {
+                text-align: unset;
+            }
+
+            .course-form__user-info {
+                flex-direction: column;
+            }
+            
+            .course-form__btn {
+                width: 100%;
+            }
+        }
+
+
+    }
+
+}
+
+//For mobile
+@include responsive ("medium-down") {
+    #course {
+
+        .course__img img {
+            width: 100%;
+        }
+
+        .course__form {
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        #course-form {
+            margin-top: 50px;
+
+            .course-form__title {
+                @include text-style (30px, $fw-3, $text-color);
+                margin-bottom: 50px;
+            }
+
+            .course-form__user-info {
+                flex-direction: column;
+            }
+            
+            .course-form__btn {
+                width: 100%;
+            }
+        }
+
+
+    }
+
+}

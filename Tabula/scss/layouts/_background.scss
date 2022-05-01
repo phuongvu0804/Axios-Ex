@@ -1,0 +1,85 @@
+#carousel {
+
+    .bg__top img{
+        width: 1900px;
+    }
+
+    .bg__top {
+        img {
+            &:first-of-type {
+                position: absolute;
+                top: 0;
+                width: 100vw;
+                object-fit: cover;
+                object-position: center; 
+            }
+
+        }
+
+    }
+
+    .bg__bottom {
+        img {
+            &:last-of-type {
+                position: absolute;
+                bottom: 0;
+                width: 100vw;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+}
+
+
+#teacher .bg-wrapper {
+    img {
+        width: 100vw;
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+#course {
+    .bg-wrapper{
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0; 
+    }
+
+    img {
+        height: auto;
+        width: 100%;
+    }
+}
+
+//Responsive
+
+//For tablet
+@include responsive ("extra-large-down") {
+    .main > .bg-wrapper {
+    
+        .bg__bottom {
+            img {
+                &:last-of-type {
+                    top: 720px;
+                }
+            }
+        }
+    }
+}
+
+//For mobile
+@include responsive ("medium-down") {
+    .main > .bg-wrapper {
+    
+        .bg__bottom {
+            img {
+                &:last-of-type {
+                    top: 670px;
+                }
+            }
+        }
+    }
+}

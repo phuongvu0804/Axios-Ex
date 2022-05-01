@@ -1,0 +1,41 @@
+@mixin title-style ($fs, $color) {
+    font: {
+        size: $fs;
+        weight: $fw-3;
+    }
+    color: $color;
+}
+
+@mixin text-style ($fs, $fw, $color) {
+    font: {
+        size: $fs;
+        weight: $fw;
+    }
+    color: $color;
+}
+
+@mixin hover__to-color ($hover-color) {
+    color: $hover-color;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+@mixin hover_btn ($hover-bg-color) {
+    background-color: $hover-bg-color;
+    transform: scaleX(1);
+}
+
+
+//Responsive
+@mixin responsive($screen) {
+    @if (map-has-key($map: $breakpoints, $key: $screen)) {
+        $value: map-get($map: $breakpoints, $key: $screen);
+        @media screen and (max-width: $value) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn 'Màn hình chưa khai báo'
+    }
+}

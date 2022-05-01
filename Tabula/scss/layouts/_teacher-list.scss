@@ -1,0 +1,136 @@
+#teacher {
+    position: relative;
+    padding-top: 20px;
+    background-color: $light-purple-color;
+
+    .container {
+        z-index: 1;
+
+        .row {
+            margin: 40px 0;
+            position: relative;
+            z-index: 4;
+            
+            &:first-of-type {
+                padding-top: $pd-4;
+            }
+        
+        }
+        
+        .col {
+            @for $counter from 1 through 8 {
+                &:nth-child(#{$counter}) {
+                    animation: appearFromLeft 0.5s 0.2s * $counter ease;
+    
+                }
+            }
+            
+        }
+        
+    }
+
+    .teacher__card {
+        border-radius: 12px;
+        border: none;
+        overflow: hidden;
+        margin-bottom: 18px;
+        animation: appearFromLeft 0.5s ease;
+
+        &:hover {
+            transition: all 0.3s ease;
+            box-shadow: 0px 18px 20px rgba(0, 0, 0, 0.14);
+
+        }
+
+        
+        .teacher__photo {
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+
+            &:hover {
+                transform: scale3d(1.05, 1.05, 1.05);
+                transition: all 0.6s ease-in-out;
+                object-fit: cover;
+                object-position: center;
+            }
+    
+        }
+    
+        .teacher__info {
+            margin: 4px 0 16px 0;
+            text-align: center;
+
+
+            .teacher-info__country {
+                @include text-style ($fs-1, $fw-2, $main-color);
+                text-align: center;
+
+            }
+    
+            .teacher-info__name {
+                @include text-style (24px, 700, $text-color);
+                margin: 8px 0;
+
+    
+            }
+    
+            .teacher-info__desc {
+                @include text-style ($fs-1, $fw-1, $text-color);
+            }
+    
+    
+        }
+    }
+
+
+}
+
+//Responsive 
+
+//For tablet
+@include responsive ("extra-large-down") {
+    #teacher {
+
+        .teacher__card {
+
+            .teacher__info {
+                .teacher-info__country {
+                    @include text-style (12px, $fw-2, $main-color);
+                    text-align: center;
+    
+                }
+    
+            }
+        }
+
+        
+
+    }
+
+}
+
+//For mobile
+@include responsive ("medium-down") {
+    #teacher {
+
+        .teacher__card {
+
+            .teacher__info {
+                .teacher-info__country {
+                    @include text-style (12px, $fw-2, $main-color);
+                    text-align: center;
+    
+                }
+    
+            }
+        }
+
+        
+
+    }
+
+
+}

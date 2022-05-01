@@ -1,0 +1,58 @@
+#carousel {
+    position: relative;
+
+    .row{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 30px;
+
+        .carousel__content {
+            animation: appearFromLeft 0.5s ease;
+            .carousel-content__title {
+                @include text-style (18px, $fw-2, $main-color)
+            }
+            .carousel-content__text {
+                @include text-style (56px, 700, $text-color)
+
+            }
+        }
+
+        .carousel__img {
+            animation: appearFromLeft 0.5s 0.3s ease;
+
+        }
+    }
+}
+
+//Responsive 
+
+//For tablet
+
+@include responsive ("extra-large-down") {
+    #carousel .row {
+        margin-top: 60px;
+        .carousel__content {
+            .carousel-content__title {
+                @include text-style (14px, $fw-2, $main-color)
+            }
+            .carousel-content__text {
+                @include text-style (46px, 700, $text-color)
+    
+            }
+        }
+
+    }
+
+}
+
+//For mobile
+@include responsive ("medium-down") {
+    #carousel .row {
+        .carousel__img img{
+            margin-top: 50px;
+            width: 315px;
+        }
+    }
+
+}

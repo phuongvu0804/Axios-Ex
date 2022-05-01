@@ -1,0 +1,52 @@
+$main-color: #b61783;
+$light-purple-color: #dcd1f0;
+$text-color: #261919;
+$white-color: #fff;
+
+
+//font size
+$fs-1: 14px;
+$fs-2: 1.1rem;
+$fs-3: 1.8rem;
+$fs-4: 70px;
+$fs-5: 1.6rem;
+$fs-6: 2.25rem;
+$fs-7: 20px;
+$fs-8: 44px;
+
+//font weight
+$fw-1: 400;
+$fw-2: 600;
+$fw-3: 800;
+
+//letter spacing
+$ls-1: 0.015rem;
+$ls-2: 0.03rem;
+
+//Margin
+$mg-1: 16px;
+$mg-2: 26px;
+$mg-3: 70px;
+$mg-4: 60px;
+
+//Padding
+$pd-1: 25px;
+$pd-2: 225px;
+$pd-3: 13px;
+$pd-4: 44px;
+$pd-5: 100px;
+$pd-6: 8px;
+$pd-7: 60px;
+$pd-8: 150px;
+
+//break points
+$breakpoints: (
+    "extra-large": 1200px,
+    "large": 992px,
+    "medium": 768px,
+    "small": 576px,
+    "extra-large-down": 1199.98px,
+    "large-down": 991.98px,
+    "medium-down": 767.98px,
+    "small-down": 575.98px,
+);
